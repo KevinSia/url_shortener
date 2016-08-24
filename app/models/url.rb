@@ -3,8 +3,7 @@ class Url < ActiveRecord::Base
   validates :short_url, presence: true
 
   def self.retrieve_short_url(long_url)
-    result = self.find_by(long_url: long_url)
-    result.nil? ? nil : result.short_url
+    self.find_by(long_url: long_url)
   end
 
 end
